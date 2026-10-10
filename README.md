@@ -4,7 +4,7 @@ A small native macOS screenshot and recording tool with independent app audio an
 
 [Watch the real app demo](docs/demo.mp4).
 
-[Download the Mac build](https://github.com/dicnunz/capture/releases/latest) or build from source below. The prebuilt preview is for Apple silicon, ad-hoc signed, and not Apple notarized.
+[Download the Mac build](https://github.com/dicnunz/capture/releases/tag/v0.1.0) or build from source below. The prebuilt preview is for Apple silicon, ad-hoc signed, and not Apple notarized.
 
 ## Build and run
 
