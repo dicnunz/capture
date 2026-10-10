@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; media-src 'self' blob:; connect-src 'none'; object-src 'none'; base-uri 'none'">
+  <title>Capture playground</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-scene="waves" data-feature="audio">
+  <div id="ambient" aria-hidden="true"></div>
+  <div class="shade" aria-hidden="true"></div>
+  <main class="stage">
+    <header>
+      <span class="wordmark">Capture <span>/ Playground</span></span>
+      <nav class="scenes" aria-label="Background">
+        <button type="button" data-scene-choice="waves" aria-pressed="true">Waves</button>
+        <button type="button" data-scene-choice="fog" aria-pressed="false">Fog</button>
+      </nav>
+    </header>
+    <section class="story" aria-labelledby="feature-title">
+      <p class="step" id="feature-step">01 / APP AUDIO</p>
+      <h1 id="feature-title">Only the sound<br>you choose.</h1>
+      <p class="description" id="feature-description">Play a soft test tone. Choose this app as Capture’s audio source.</p>
+      <div class="actions">
+        <button type="button" class="primary" id="tone-start">Play test audio <span aria-hidden="true">↗</span></button>
+        <button type="button" class="secondary" id="tone-stop" disabled>Stop audio</button>
+        <span id="tone-state" class="quiet" role="status">Muted</span>
+      </div>
+      <div class="result-actions" hidden>
+        <button type="button" class="primary" id="open-image">Open screenshot <span aria-hidden="true">↗</span></button>
+        <button type="button" class="secondary" id="open-video">Open recording</button>
+      </div>
+      <div id="paste-area" contenteditable="true" role="textbox" aria-label="Paste a screenshot here" data-placeholder="Paste a screenshot here with ⌘V" spellcheck="false" hidden></div>
+      <p id="file-status" class="quiet" role="status"></p>
+    </section>
+    <footer>
+      <nav class="features" aria-label="Demo scene">
+        <button type="button" data-feature-choice="audio" aria-current="step"><span>01</span> App audio</button>
+        <button type="button" data-feature-choice="copy"><span>02</span> Copy screenshot</button>
+        <button type="button" data-feature-choice="finish"><span>03</span> Finish &amp; preview</button>
+        <button type="button" data-feature-choice="result"><span>04</span> Result</button>
+      </nav>
+      <details class="credits">
+        <summary>Sources</summary>
+        <p>Waves and Fog by Teng Bao / Vanta.<br>three.js by its contributors.<br><a href="vendor/VANTA-LICENSE.md">Vanta MIT license</a> · <a href="vendor/THREE-LICENSE.txt">three.js MIT license</a></p>
+      </details>
+    </footer>
+  </main>
+  <section id="media-view" aria-label="Actual captured result" hidden>
+    <header class="media-header">
+      <button type="button" id="media-back">← Back</button>
+      <span id="media-name"></span>
+      <span id="media-info"></span>
+    </header>
+    <div id="media-container"></div>
+  </section>
+  <input id="image-file" type="file" accept="image/*" hidden>
+  <input id="video-file" type="file" accept="video/*" hidden>
+  <script src="vendor/three.min.js"></script>
+  <script src="vendor/vanta.waves.min.js"></script>
+  <script src="vendor/vanta.fog.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

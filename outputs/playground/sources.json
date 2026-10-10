@@ -1,0 +1,11 @@
+{
+  "accessed": "2026-10-10",
+  "vanta_commit": "f8b351906688b56f0fc744e53bde81fc3c56f150",
+  "sources": {
+    "vanta.waves.min.js": "https://raw.githubusercontent.com/tengbao/vanta/f8b351906688b56f0fc744e53bde81fc3c56f150/dist/vanta.waves.min.js",
+    "vanta.fog.min.js": "https://raw.githubusercontent.com/tengbao/vanta/f8b351906688b56f0fc744e53bde81fc3c56f150/dist/vanta.fog.min.js",
+    "VANTA-LICENSE.md": "https://raw.githubusercontent.com/tengbao/vanta/f8b351906688b56f0fc744e53bde81fc3c56f150/LICENSE.md",
+    "three.min.js": "https://raw.githubusercontent.com/mrdoob/three.js/r134/build/three.min.js",
+    "THREE-LICENSE.txt": "https://raw.githubusercontent.com/mrdoob/three.js/r134/LICENSE"
+  }
+}

@@ -1,0 +1,67 @@
+:root { color-scheme: dark; font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif; color: #f6f6ed; background: #092e35; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { margin: 0; overflow: hidden; }
+button, input { font: inherit; }
+button { cursor: pointer; color: inherit; }
+button:disabled { cursor: default; opacity: .34; }
+button:focus-visible, summary:focus-visible, [contenteditable]:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
+[hidden] { display: none !important; }
+#ambient, .shade { position: fixed; inset: 0; }
+.shade { pointer-events: none; background: linear-gradient(90deg, rgba(3, 24, 27, .45), transparent 72%), linear-gradient(0deg, rgba(3, 24, 27, .35), transparent 30%); }
+.stage { height: min(100svh, 720px); position: relative; padding: 34px 5.8vw 26px; display: flex; flex-direction: column; }
+header { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.wordmark { font-size: 15px; font-weight: 600; letter-spacing: -.02em; }
+.wordmark span { margin-left: 4px; font-weight: 400; opacity: .52; }
+.scenes { display: flex; gap: 18px; }
+.scenes button { padding: 5px 0; border: 0; background: none; font-size: 12px; opacity: .55; }
+.scenes button[aria-pressed="true"] { opacity: 1; border-bottom: 1px solid currentColor; }
+.story { margin-top: clamp(60px, 12vh, 110px); max-width: 780px; }
+.step { font-size: 10px; letter-spacing: .13em; font-weight: 500; opacity: .57; margin: 0 0 22px; }
+h1 { margin: 0; font-size: clamp(48px, 5.7vw, 90px); line-height: 1.01; letter-spacing: -.058em; font-weight: 400; }
+.description { margin: 28px 0 0; max-width: 460px; font-size: 15px; line-height: 1.6; opacity: .72; }
+.actions, .result-actions { display: flex; align-items: center; gap: 14px; margin-top: 27px; }
+.primary, .secondary { border-radius: 6px; padding: 11px 15px; font-size: 12px; font-weight: 500; transition: background .18s; }
+.primary { border: 1px solid #f3f5e8; background: #f3f5e8; color: #173738; }
+.primary span { margin-left: 10px; }
+.primary:hover { background: white; }
+.secondary { border: 1px solid rgba(240, 248, 240, .28); background: transparent; }
+.secondary:hover:not(:disabled) { background: rgba(255, 255, 255, .08); }
+.quiet { font-size: 11px; opacity: .6; }
+#tone-state { min-width: 67px; }
+#file-status { min-height: 16px; margin-top: 12px; }
+#paste-area { margin-top: 24px; padding: 14px 16px; max-width: 460px; min-height: 54px; max-height: 150px; overflow: auto; border: 1px dashed rgba(235, 245, 235, .35); border-radius: 5px; font-size: 13px; background: rgba(0, 12, 16, .12); }
+#paste-area:empty::before { content: attr(data-placeholder); opacity: .57; pointer-events: none; }
+footer { margin-top: auto; padding-top: 26px; display: flex; align-items: flex-end; justify-content: space-between; gap: 25px; }
+.features { display: flex; gap: clamp(16px, 2.7vw, 44px); }
+.features button { padding: 10px 0 14px; border: 0; border-bottom: 1px solid transparent; background: none; font-size: 12px; opacity: .52; white-space: nowrap; }
+.features button span { font-size: 10px; margin-right: 8px; opacity: .56; }
+.features button[aria-current="step"] { opacity: 1; border-bottom-color: currentColor; }
+.credits { position: relative; font-size: 10px; opacity: .6; padding-bottom: 13px; }
+.credits summary { cursor: pointer; list-style: none; }
+.credits p { position: absolute; bottom: 22px; right: 0; width: 230px; margin: 0; padding: 14px; background: #0d3037; border: 1px solid rgba(255, 255, 255, .12); border-radius: 7px; line-height: 1.8; }
+.credits a { color: inherit; }
+body[data-scene="fog"] { color-scheme: light; color: #46382c; background: #e9ddc8; }
+body[data-scene="fog"] .shade { background: linear-gradient(90deg, rgba(255, 248, 228, .35), transparent 75%); }
+body[data-scene="fog"] .primary { color: #fff8e8; background: #514434; border-color: #514434; }
+body[data-scene="fog"] .primary:hover { background: #30291f; }
+body[data-scene="fog"] .secondary { border-color: rgba(70, 56, 44, .3); }
+body[data-scene="fog"] .secondary:hover:not(:disabled) { background: rgba(70, 56, 44, .06); }
+body[data-scene="fog"] #paste-area { border-color: rgba(70, 56, 44, .3); background: rgba(255, 251, 237, .2); }
+body[data-scene="fog"] .credits p { background: #eee5d6; border-color: rgba(70, 56, 44, .15); }
+#media-view { position: fixed; inset: 0; z-index: 2; padding: 30px 4vw 4vw; background: #101212; color: #ededdf; display: flex; flex-direction: column; gap: 26px; }
+.media-header { justify-content: flex-start; font-size: 12px; }
+#media-back { background: none; border: 0; padding: 9px 0; margin-right: 15px; }
+#media-name { flex: 1; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; opacity: .8; }
+#media-info { opacity: .5; font-size: 11px; }
+#media-container { flex: 1; min-height: 0; display: grid; place-items: center; }
+#media-container img, #media-container video { max-width: 100%; max-height: calc(100svh - 115px); object-fit: contain; border-radius: 5px; }
+#media-container video { width: 100%; height: 100%; }
+@media (max-width: 800px) { .stage { padding: 23px 6vw; } .story { margin-top: 15vh; } h1 { font-size: clamp(46px, 8vw, 70px); } .features { display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; } .features button { text-align: left; } .description { max-width: 350px; } .actions, .result-actions { flex-wrap: wrap; } }
+@media (max-height: 660px) { .story { margin-top: 50px; } h1 { font-size: 54px; } .description { margin-top: 20px; } .stage { padding-top: 22px; padding-bottom: 15px; } .step { margin-bottom: 16px; } footer { padding-top: 12px; } }
+@media (prefers-reduced-motion: reduce) { .primary, .secondary { transition: none; } }
+/* A quiet stage for filming the native capture controls. */
+body[data-backdrop] header { justify-content: center; }
+body[data-backdrop] .scenes, body[data-backdrop] .step, body[data-backdrop] h1,
+body[data-backdrop] .description, body[data-backdrop] footer { display: none; }
+body[data-backdrop] .story { align-self: center; margin-top: 120px; }
+body[data-backdrop] .actions { justify-content: center; }
